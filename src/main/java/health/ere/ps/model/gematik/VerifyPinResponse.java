@@ -2,6 +2,7 @@ package health.ere.ps.model.gematik;
 
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.Objects;
 
 import de.gematik.ws.conn.cardservicecommon.v2.PinResultEnum;
 import de.gematik.ws.conn.connectorcommon.v5.Status;
@@ -41,4 +42,16 @@ public class VerifyPinResponse implements Serializable {
         this.leftTries = leftTries;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        VerifyPinResponse that = (VerifyPinResponse) o;
+        return Objects.equals(status, that.status) && pinResultEnum == that.pinResultEnum && Objects.equals(leftTries, that.leftTries);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(status, pinResultEnum, leftTries);
+    }
 }
