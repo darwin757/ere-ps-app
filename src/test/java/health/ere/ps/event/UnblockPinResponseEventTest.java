@@ -72,8 +72,6 @@ class UnblockPinResponseEventTest {
         Assertions.assertEquals(unblockPinResponse, unblockPinResponseEvent.getUnblockPinResponse(), "unblockPinResponse should be set and retrieved correctly");
     }
 
-    //FIXME Debug equals method, see if the assertion error is correct.
-    @Disabled("Assertion Error")
     @Test
     void testEqualsAndHashCode() {
         Status status = new Status();
